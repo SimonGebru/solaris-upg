@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solaris - Solsystemet</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" type="module" defer></script>
-</head>
-<body>
-  <header></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solaris - Solsystemet</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="module" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>SOLSYSTEMET</h1>
+      <p class="subtitle">SOLARIS</p>
+    </header>
 
-  <main>
-    <section id="solar-system" aria-label="Solsystemet">
-      <article class="sun" aria-label="Solen">
-        <img src="svg/Subtract.svg" alt="En tredjedel av solen">
-      </article>
-      <article id="planets" aria-label="Planeter">
-        <div id="solar-system">
+    <main>
+      <section id="solar-system" aria-label="Solsystemet">
+        <article class="sun" aria-label="Solen">
+          <img src="svg/Subtract.svg" alt="En tredjedel av solen" />
+        </article>
+        <article id="planets" aria-label="Planeter">
+          <div id="solar-system">
             <!-- Merkurius -->
-            <div class="planet mercury"></div>
-        
+            <div class="planet mercury" data-planet="Merkurius"></div>
+
             <!-- Venus -->
-            <div class="planet venus"></div>
-        
+            <div class="planet venus" data-planet="Venus"></div>
+
             <!-- Jorden -->
-            <div class="planet earth"></div>
-        
+            <div class="planet earth" data-planet="Jorden"></div>
+
             <!-- Mars -->
-            <div class="planet mars"></div>
-        
+            <div class="planet mars" data-planet="Mars"></div>
+
             <!-- Jupiter -->
-            <div class="planet jupiter"></div>
-        
+            <div class="planet jupiter" data-planet="Jupiter"></div>
+
             <!-- Saturnus med ring -->
-            <div class="planet saturn">
+            <div class="planet saturn" data-planet="Saturnus">
               <div class="ring"></div>
             </div>
-        
+
             <!-- Uranus -->
-            <div class="planet uranus"></div>
-        
+            <div class="planet uranus" data-planet="Uranus"></div>
+
             <!-- Neptunus -->
-            <div class="planet neptune"></div>
+            <div class="planet neptune" data-planet="Neptunus"></div>
           </div>
-      </article>
-    </section>
-  </main>
+        </article>
+      </section>
+    </main>
 
-  <section id="planet-overlay" class="overlay hidden" role="dialog" aria-labelledby="overlay-title" aria-hidden="true">
-    <article class="overlay-content">
-      <button id="close-overlay" aria-label="Stäng">✕</button>
-      <h2 id="overlay-title">Planeten</h2>
-      <p id="overlay-description"></p>
-      <dl>
-        <dt>Latinskt namn:</dt>
-        <dd id="overlay-latin-name"></dd>
+    <section
+  id="planet-overlay"
+  class="overlay hidden"
+  role="dialog"
+  aria-labelledby="overlay-title"
+  aria-hidden="true"
+>
+  <article class="overlay-content">
+    <button id="close-overlay" class="close-btn" aria-label="Stäng">✕</button>
+    <h2 id="overlay-title">Planeten</h2>
+    <p id="overlay-description"></p>
+    <dl>
+      <dt>Latinskt namn:</dt>
+      <dd id="overlay-latin-name"></dd>
 
-        <dt>Omkrets:</dt>
-        <dd id="overlay-circumference"></dd>
+      <dt>Omkrets:</dt>
+      <dd id="overlay-circumference"></dd>
 
-        <dt>Avstånd från solen:</dt>
-        <dd id="overlay-distance"></dd>
+      <dt>Avstånd från solen:</dt>
+      <dd id="overlay-distance"></dd>
 
-        <dt>Temperatur dag/natt:</dt>
-        <dd id="overlay-temperature"></dd>
+      <dt>Temperatur dag/natt:</dt>
+      <dd id="overlay-temperature"></dd>
 
-        <dt>Dygnslängd:</dt>
-        <dd id="overlay-rotation"></dd>
+      <dt>Dygnslängd:</dt>
+      <dd id="overlay-rotation"></dd>
 
-        <dt>Årslängd:</dt>
-        <dd id="overlay-orbital-period"></dd>
+      <dt>Årslängd:</dt>
+      <dd id="overlay-orbital-period"></dd>
 
-        <dt>Månar:</dt>
-        <dd id="overlay-moons"></dd>
-      </dl>
-    </article>
-  </section>
-
-  <footer>
-    <p>© 2024 Solaris av Simon</p>
-  </footer>
-</body>
-</html>
+      <dt>Månar:</dt>
+      <dd id="overlay-moons"></dd>
+    </dl>
+  </article>
+</section>

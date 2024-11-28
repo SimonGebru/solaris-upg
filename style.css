@@ -7,13 +7,42 @@ body {
     align-items: center;
     height: 100vh;
   }
+  /* Header styling */
+header {
+    position: absolute;
+    top: 20px; /* Placera texten från toppen */
+    right: 20px; /* Placera texten från höger */
+    text-align: right; /* Justera texten till höger */
+  }
   
+  header h1 {
+    font-size: 3rem; /* Storlek för "SOLSYSTEMET" */
+    font-weight: bold; /* Fetstil */
+    color: white; /* Vit text */
+    margin: 0; /* Ta bort marginal */
+  }
+  
+  header .subtitle {
+    font-size: 1.7rem; /* Storlek för "SOLARIS" */
+    color: #C6A042; /* Guldfärgad text */
+    font-weight: normal; /* Normal vikt */
+    letter-spacing: 5px; /* Avstånd mellan bokstäver */
+    margin: 0; /* Ta bort marginal */
+    margin-top: 10px;
+  }
   #solar-system {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%; /* Bredd för solsystemet */
   }
+  .sun {
+  position: absolute;
+  left: -1%; /* Skjut solen längre till vänster */
+  top: 1;
+  width: 20rem; /* Storlek för solen */
+  height: auto;
+}
   
   /* Planeter */
   .planet {
@@ -26,36 +55,42 @@ body {
     width: 14px;
     height: 14px;
     background: #888888;
+    right: 279px;
   }
   
   .venus {
     width: 20px;
     height: 20px;
     background: #E7CDCD;
+    right: 190px;
   }
   
   .earth {
     width: 24px;
     height: 24px;
     background: #428ED5;
+    right: 110px;
   }
   
   .mars {
     width: 14px;
     height: 14px;
     background: #EF5F5F;
+    right: 17px;
   }
   
   .jupiter {
     width: 188px;
     height: 188px;
     background: #E29468;
+    left: 85px;
   }
   
   .saturn {
     width: 144px;
     height: 144px;
     background: #C7AA72;
+    left: 230px;
   }
   
   /* Saturnus ring */
@@ -74,12 +109,14 @@ body {
     width: 66px;
     height: 66px;
     background: #C9D4F1;
+    left: 410px;
   }
   
   .neptune {
     width: 66px;
     height: 66px;
     background: #7A91A7;
+    left: 485px;
   }
   
   /* Extra styling för finare layout */
@@ -91,5 +128,36 @@ body {
   .saturn:hover .ring {
     transform: translate(-50%, -50%) rotate(-30deg) scale(1.1); /* Förstora ringen vid hover */
     transition: transform 0.3s ease;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px; /* Anpassa storlek */
+    background: #1B2139; /* Bakgrundsfärg */
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Skugga */
+    z-index: 100; /* Prioritera över allt annat */
+    display: none; /* Döljs som standard */
+  }
+  
+  .overlay.visible {
+    display: block; /* Gör overlay synlig */
+  }
+  
+  .overlay .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
   
