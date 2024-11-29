@@ -56,6 +56,7 @@
     role="dialog"
     aria-labelledby="overlay-title"
 >
+<section class="planet-indicator"></section>
     <article class="overlay-content">
         <button id="close-overlay" class="close-btn" aria-label="Stäng">✕</button>
 
@@ -67,22 +68,29 @@
 
         <!-- Beskrivning -->
         <p id="overlay-description">
-            Jupiter är den femte planeten från solen och är med stor marginal...
+            
         </p>
 
         <!-- Första vita linjen -->
         <hr class="section-divider">
 
         <!-- Data-sektion -->
-        <dl>
+        <dl class="data-grid">
+            <!-- Första raden -->
             <dt>Omkrets:</dt>
-            <dd id="overlay-circumference"></dd>
             <dt>KM från solen:</dt>
-            <dd id="overlay-distance"></dd>
+        
+            <!-- Andra raden -->
+            <dd id="overlay-circumference">160 590 km</dd>
+            <dd id="overlay-distance">2 871 000 000 km</dd>
+        
+            <!-- Tredje raden -->
             <dt>Max Temperatur:</dt>
-            <dd id="overlay-max-temp"></dd>
             <dt>Min Temperatur:</dt>
-            <dd id="overlay-min-temp"></dd>
+        
+            <!-- Fjärde raden -->
+            <dd id="overlay-max-temp">-205°C</dd>
+            <dd id="overlay-min-temp">-225°C</dd>
         </dl>
 
         <!-- Andra vita linjen -->

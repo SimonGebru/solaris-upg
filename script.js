@@ -51,11 +51,22 @@ const fetchApiKey = async () => {
     });
   };
   
-  // 4. Visa overlay
-  const showOverlay = (planet) => {
+  
+  const planetColors = {
+    Merkurius: '#888888',
+    Venus: '#e7cdcd',
+    Jorden: '#428ed5',
+    Mars: '#ef5f5f',
+    Jupiter: '#e29468',
+    Saturnus: '#c7aa72',
+    Uranus: '#c9d4f1',
+    Neptunus: '#7a91a7'
+};
+
+const showOverlay = (planet) => {
     const overlay = document.getElementById("planet-overlay");
     const sun = document.querySelector(".sun");
-
+    const planetIndicator = document.querySelector(".planet-indicator"); // Planetindikatorn
 
     // Uppdatera rubriker och innehåll
     document.getElementById("overlay-title").innerText = planet.name;
@@ -68,6 +79,11 @@ const fetchApiKey = async () => {
     document.getElementById("overlay-moons").innerText =
         planet.moons.length > 0 ? planet.moons.join(", ") : "Inga månar";
 
+    // Ändra färgen på planetindikatorn
+    if (planetIndicator) {
+        planetIndicator.style.backgroundColor = planetColors[planet.name] || '#ffffff'; // Standardfärg om inget matchar
+    }
+
     // Visa overlay och dölja resten av sidan
     overlay.classList.add("visible");
     document.body.classList.add("overlay-visible");
@@ -77,6 +93,9 @@ const fetchApiKey = async () => {
         overlay.classList.remove("visible");
         document.body.classList.remove("overlay-visible");
         sun.style.backgroundImage = ""; // Återställ solen
+        if (planetIndicator) {
+            planetIndicator.style.backgroundColor = ''; // Återställ planetindikatorn
+        }
     });
 };
   
