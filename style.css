@@ -1,163 +1,278 @@
 body {
-    background: linear-gradient(180deg, #0B0D33, #141862); /* Bakgrundsgradient */
-    color: white;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  /* Header styling */
+  background: linear-gradient(180deg, #0b0d33, #141862); /* Bakgrundsgradient */
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Header styling */
 header {
-    position: absolute;
-    top: 20px; /* Placera texten från toppen */
-    right: 20px; /* Placera texten från höger */
-    text-align: right; /* Justera texten till höger */
-  }
-  
-  header h1 {
-    font-size: 3rem; /* Storlek för "SOLSYSTEMET" */
-    font-weight: bold; /* Fetstil */
-    color: white; /* Vit text */
-    margin: 0; /* Ta bort marginal */
-  }
-  
-  header .subtitle {
-    font-size: 1.7rem; /* Storlek för "SOLARIS" */
-    color: #C6A042; /* Guldfärgad text */
-    font-weight: normal; /* Normal vikt */
-    letter-spacing: 5px; /* Avstånd mellan bokstäver */
-    margin: 0; /* Ta bort marginal */
-    margin-top: 10px;
-  }
-  #solar-system {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%; /* Bredd för solsystemet */
-  }
-  .sun {
+  position: absolute;
+  top: 20px; /* Placera texten från toppen */
+  right: 20px; /* Placera texten från höger */
+  text-align: right; /* Justera texten till höger */
+}
+
+header h1 {
+  font-size: 3rem; /* Storlek för "SOLSYSTEMET" */
+  font-weight: bold; /* Fetstil */
+  color: white; /* Vit text */
+  margin: 0; /* Ta bort marginal */
+}
+
+header .subtitle {
+  font-size: 1.7rem; /* Storlek för "SOLARIS" */
+  color: #c6a042; /* Guldfärgad text */
+  font-weight: normal; /* Normal vikt */
+  letter-spacing: 5px; /* Avstånd mellan bokstäver */
+  margin: 0; /* Ta bort marginal */
+  margin-top: 10px;
+}
+#solar-system {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%; /* Bredd för solsystemet */
+}
+.sun {
   position: absolute;
   left: -1%; /* Skjut solen längre till vänster */
   top: 1;
   width: 20rem; /* Storlek för solen */
   height: auto;
 }
-  
-  /* Planeter */
-  .planet {
-    border-radius: 50%; /* Gör cirklar */
-    position: relative;
-  }
-  
-  /* Individuella planeter */
-  .mercury {
-    width: 14px;
-    height: 14px;
-    background: #888888;
-    right: 279px;
-  }
-  
-  .venus {
-    width: 20px;
-    height: 20px;
-    background: #E7CDCD;
-    right: 190px;
-  }
-  
-  .earth {
-    width: 24px;
-    height: 24px;
-    background: #428ED5;
-    right: 110px;
-  }
-  
-  .mars {
-    width: 14px;
-    height: 14px;
-    background: #EF5F5F;
-    right: 17px;
-  }
-  
-  .jupiter {
-    width: 188px;
-    height: 188px;
-    background: #E29468;
-    left: 85px;
-  }
-  
-  .saturn {
-    width: 144px;
-    height: 144px;
-    background: #C7AA72;
-    left: 230px;
-  }
-  
-  /* Saturnus ring */
-  .saturn .ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) rotate(-30deg);
-  }
-  
-  .uranus {
-    width: 66px;
-    height: 66px;
-    background: #C9D4F1;
-    left: 410px;
-  }
-  
-  .neptune {
-    width: 66px;
-    height: 66px;
-    background: #7A91A7;
-    left: 485px;
-  }
-  
-  /* Extra styling för finare layout */
-  .planet:hover {
-    transform: scale(1.1); /* Förstora planeten vid hover */
-    transition: transform 0.3s ease;
-  }
-  
-  .saturn:hover .ring {
-    transform: translate(-50%, -50%) rotate(-30deg) scale(1.1); /* Förstora ringen vid hover */
-    transition: transform 0.3s ease;
-  }
 
-  .overlay {
+/* Planeter */
+.planet {
+  border-radius: 50%; /* Gör cirklar */
+  position: relative;
+}
+
+/* Individuella planeter */
+.mercury {
+  width: 14px;
+  height: 14px;
+  background: #888888;
+  right: 279px;
+}
+
+.venus {
+  width: 20px;
+  height: 20px;
+  background: #e7cdcd;
+  right: 190px;
+}
+
+.earth {
+  width: 24px;
+  height: 24px;
+  background: #428ed5;
+  right: 110px;
+}
+
+.mars {
+  width: 14px;
+  height: 14px;
+  background: #ef5f5f;
+  right: 17px;
+}
+
+.jupiter {
+  width: 188px;
+  height: 188px;
+  background: #e29468;
+  left: 85px;
+}
+
+.saturn {
+  width: 144px;
+  height: 144px;
+  background: #c7aa72;
+  left: 230px;
+}
+
+/* Saturnus ring */
+.saturn .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.uranus {
+  width: 66px;
+  height: 66px;
+  background: #c9d4f1;
+  left: 410px;
+}
+
+.neptune {
+  width: 66px;
+  height: 66px;
+  background: #7a91a7;
+  left: 485px;
+}
+
+/* Extra styling för finare layout */
+.planet:hover {
+  transform: scale(1.1); /* Förstora planeten vid hover */
+  transition: transform 0.3s ease;
+}
+
+.saturn:hover .ring {
+  transform: translate(-50%, -50%) rotate(-30deg) scale(1.1); /* Förstora ringen vid hover */
+  transition: transform 0.3s ease;
+}
+
+.mercury:hover,
+.venus:hover,
+.earth:hover,
+.mars:hover {
+  transform: scale(2); /* Öka storleken med 30% */
+  transition: transform 0.3s ease; /* Lägg till en smidig övergång */
+}
+
+.overlay {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px; /* Anpassa storlek */
-    background: #1B2139; /* Bakgrundsfärg */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 13, 51, 0.95); /* Mörk transparent bakgrund */
     color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Skugga */
-    z-index: 100; /* Prioritera över allt annat */
-    display: none; /* Döljs som standard */
-  }
-  
-  .overlay.visible {
-    display: block; /* Gör overlay synlig */
-  }
-  
-  .overlay .close-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centrera */
+    padding: 3rem 5rem;
+    box-sizing: border-box;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Visa overlay */
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Overlay - Innehåll */
+.overlay-content {
+    max-width: 800px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rubrik och underrubrik */
+.overlay-header {
+    margin-bottom: 2rem;
+}
+
+.overlay-header h2 {
+    font-size: 3rem; /* Stor rubrik */
+    font-weight: bold; /* Fet text */
+    color: white; /* Vit text */
+    margin: 0 0 0.5rem; /* Avstånd under rubriken */
+    text-transform: uppercase; /* Versaler */
+    text-align: left; /* Vänsterjustera */
+}
+
+.overlay-header p.subtitle {
+    font-size: 1.5rem;
+    color: #C6A042;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+/* Beskrivning */
+.overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6; /* Gör texten mer lättläst */
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Sektion-delare */
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Tunn vit linje */
+    margin: 2rem 0; /* Avstånd ovanför och under */
+}
+
+/* Data-sektion */
+.overlay dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Två kolumner */
+    gap: 1rem 2rem; /* Mellanrum mellan celler */
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.overlay dl dt {
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase; /* Versaler */
+}
+
+.overlay dl dd {
+    margin: 0;
+    color: white;
+    text-align: right;
+}
+
+/* Månar */
+
+
+.moons-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    text-align: left; /* Vänsterjustera rubriken "Månar:" */
+}
+
+/* Månar - Titel (Månar:) */
+.moons-section dt {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase; /* Gör texten versaler */
+}
+
+/* Månar - Lista */
+.moons-section dd {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+    text-align: left; /* Justera texten till vänster */
+    line-height: 1.5; /* För bättre läsbarhet om det finns flera månar */
+}
+
+/* Stäng-knappen */
+.close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
     background: none;
     border: none;
-    color: white;
-    font-size: 1.5rem;
     cursor: pointer;
-  }
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #C6A042; /* Guldliknande hover-effekt */
+}
+  
   

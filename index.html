@@ -51,37 +51,51 @@
     </main>
 
     <section
-  id="planet-overlay"
-  class="overlay hidden"
-  role="dialog"
-  aria-labelledby="overlay-title"
-  aria-hidden="true"
+    id="planet-overlay"
+    class="overlay hidden"
+    role="dialog"
+    aria-labelledby="overlay-title"
 >
-  <article class="overlay-content">
-    <button id="close-overlay" class="close-btn" aria-label="Stäng">✕</button>
-    <h2 id="overlay-title">Planeten</h2>
-    <p id="overlay-description"></p>
-    <dl>
-      <dt>Latinskt namn:</dt>
-      <dd id="overlay-latin-name"></dd>
+    <article class="overlay-content">
+        <button id="close-overlay" class="close-btn" aria-label="Stäng">✕</button>
 
-      <dt>Omkrets:</dt>
-      <dd id="overlay-circumference"></dd>
+        <!-- Rubrik och underrubrik -->
+        <section class="overlay-header">
+            <h2 id="overlay-title"></h2>
+            <p class="subtitle" id="overlay-latin-name"></p>
+        </section>
 
-      <dt>Avstånd från solen:</dt>
-      <dd id="overlay-distance"></dd>
+        <!-- Beskrivning -->
+        <p id="overlay-description">
+            Jupiter är den femte planeten från solen och är med stor marginal...
+        </p>
 
-      <dt>Temperatur dag/natt:</dt>
-      <dd id="overlay-temperature"></dd>
+        <!-- Första vita linjen -->
+        <hr class="section-divider">
 
-      <dt>Dygnslängd:</dt>
-      <dd id="overlay-rotation"></dd>
+        <!-- Data-sektion -->
+        <dl>
+            <dt>Omkrets:</dt>
+            <dd id="overlay-circumference"></dd>
+            <dt>KM från solen:</dt>
+            <dd id="overlay-distance"></dd>
+            <dt>Max Temperatur:</dt>
+            <dd id="overlay-max-temp"></dd>
+            <dt>Min Temperatur:</dt>
+            <dd id="overlay-min-temp"></dd>
+        </dl>
 
-      <dt>Årslängd:</dt>
-      <dd id="overlay-orbital-period"></dd>
+        <!-- Andra vita linjen -->
+        <hr class="section-divider">
 
-      <dt>Månar:</dt>
-      <dd id="overlay-moons"></dd>
-    </dl>
-  </article>
+        <!-- Månar -->
+        <section class="moons-section">
+            <dt>Månar:</dt>
+            <dd id="overlay-moons">
+                Europa, Ganymedes, Io, Callisto, Amalthea, Himalia
+            </dd>
+        </section>
+    </article>
 </section>
+  </body>
+</html>
