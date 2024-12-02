@@ -4,105 +4,110 @@ const baseUrl = "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com";
 // Globala variabler
 let apiKey = "";
 
-// 1. Hämta API-nyckel
+// Hämta API-nyckel
 const fetchApiKey = async () => {
-    try {
-      const response = await fetch(`${baseUrl}/keys`, { method: "POST" });
-      const data = await response.json();
-      apiKey = data.key;
-      console.log("API Key fetched:", apiKey);
-    } catch (error) {
-      console.error("Failed to fetch API key:", error);
-    }
-  };
-  
-  // 2. Hämta data om himlakroppar
-  const fetchPlanets = async () => {
-    try {
-      const response = await fetch(`${baseUrl}/bodies`, {
-        method: "GET",
-        headers: { "x-zocom": apiKey },
-      });
-      const data = await response.json();
-      const planets = data.bodies;
-      console.log("Planets fetched:", planets);
-  
-      // Lägg till klickhändelser
-      setupPlanetClickEvents(planets);
-    } catch (error) {
-      console.error("Failed to fetch planets:", error);
-    }
-  };
-  
-  // 3. Klickhändelse för varje planet
-  const setupPlanetClickEvents = (planets) => {
-    const planetElements = document.querySelectorAll(".planet");
-  
-    planetElements.forEach((planetElement) => {
-      const planetName = planetElement.dataset.planet;
-  
-      const planetData = planets.find(
-        (planet) => planet.name?.toLowerCase() === planetName.toLowerCase()
-      );
-  
-      if (planetData) {
-        planetElement.addEventListener("click", () => showOverlay(planetData));
-      }
-    });
-  };
-  
-  
-  const planetColors = {
-    Merkurius: '#888888',
-    Venus: '#e7cdcd',
-    Jorden: '#428ed5',
-    Mars: '#ef5f5f',
-    Jupiter: '#e29468',
-    Saturnus: '#c7aa72',
-    Uranus: '#c9d4f1',
-    Neptunus: '#7a91a7'
+  try {
+    const response = await fetch(`${baseUrl}/keys`, { method: "POST" });
+    const data = await response.json();
+    apiKey = data.key;
+    console.log("API Key fetched:", apiKey);
+  } catch (error) {
+    console.error("Failed to fetch API key:", error);
+  }
 };
 
-const showOverlay = (planet) => {
-    const overlay = document.getElementById("planet-overlay");
-    const sun = document.querySelector(".sun");
-    const planetIndicator = document.querySelector(".planet-indicator"); // Planetindikatorn
+// Hämta data
+const fetchPlanets = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/bodies`, {
+      method: "GET",
+      headers: { "x-zocom": apiKey },
+    });
+    const data = await response.json();
+    const bodies = data.bodies;
+    console.log("Bodies fetched:", bodies);
 
-    // Uppdatera rubriker och innehåll
-    document.getElementById("overlay-title").innerText = planet.name;
-    document.getElementById("overlay-latin-name").innerText = planet.latinName;
-    document.getElementById("overlay-description").innerText = planet.desc;
-    document.getElementById("overlay-circumference").innerText = `${planet.circumference} km`;
-    document.getElementById("overlay-distance").innerText = `${planet.distance} km`;
-    document.getElementById("overlay-max-temp").innerText = `${planet.temp.day}°C`;
-    document.getElementById("overlay-min-temp").innerText = `${planet.temp.night}°C`;
-    document.getElementById("overlay-moons").innerText =
-        planet.moons.length > 0 ? planet.moons.join(", ") : "Inga månar";
+    // Lägg till klickhändelser
+    setupPlanetClickEvents(bodies);
+  } catch (error) {
+    console.error("Failed to fetch planets:", error);
+  }
+};
 
-    // Ändra färgen på planetindikatorn
+// Klickhändelse för varje planet och sol
+const setupPlanetClickEvents = (bodies) => {
+  if (!Array.isArray(bodies)) {
+    console.error("Expected an array but got:", bodies);
+    return;
+  }
+
+  const planetElements = document.querySelectorAll(".planet, .sun");
+
+  planetElements.forEach((planetElement) => {
+    const planetName = planetElement.dataset.planet;
+
+    const planetData = bodies.find(
+      (body) => body.name?.toLowerCase() === planetName.toLowerCase()
+    );
+
+    if (planetData) {
+      planetElement.addEventListener("click", () => showOverlay(planetData));
+    } else {
+      console.warn(`No data found for planet: ${planetName}`);
+    }
+  });
+};
+
+const planetColors = {
+  Merkurius: "#888888",
+  Venus: "#e7cdcd",
+  Jorden: "#428ed5",
+  Mars: "#ef5f5f",
+  Jupiter: "#e29468",
+  Saturnus: "#c7aa72",
+  Uranus: "#c9d4f1",
+  Neptunus: "#7a91a7",
+  Solen: "rgba(255, 208, 41, 1)",
+};
+
+const showOverlay = (body) => {
+  const overlay = document.getElementById("planet-overlay");
+  const planetIndicator = document.querySelector(".planet-indicator");
+
+  // Uppdatera overlay-innehåll
+  document.getElementById("overlay-title").innerText = body.name;
+  document.getElementById("overlay-latin-name").innerText = body.latinName;
+  document.getElementById("overlay-description").innerText = body.desc;
+  document.getElementById("overlay-circumference").innerText = `${body.circumference} km`;
+  document.getElementById("overlay-distance").innerText = `${body.distance} km`;
+  document.getElementById("overlay-max-temp").innerText = `${body.temp.day}°C`;
+  document.getElementById("overlay-min-temp").innerText = `${body.temp.night}°C`;
+  document.getElementById("overlay-moons").innerText =
+    body.moons.length > 0 ? body.moons.join(", ") : "Inga månar";
+
+  // Ändra färgen på planetindikatorn
+  if (planetIndicator) {
+    planetIndicator.style.backgroundColor = planetColors[body.name] || "#ffffff";
+  }
+
+  // Visa overlay
+  overlay.classList.add("visible");
+  document.body.classList.add("overlay-visible");
+
+  // Lägg till stäng-knappen
+  document.getElementById("close-overlay").addEventListener("click", () => {
+    overlay.classList.remove("visible");
+    document.body.classList.remove("overlay-visible");
     if (planetIndicator) {
-        planetIndicator.style.backgroundColor = planetColors[planet.name] || '#ffffff'; // Standardfärg om inget matchar
+      planetIndicator.style.backgroundColor = "";
     }
-
-    // Visa overlay och dölja resten av sidan
-    overlay.classList.add("visible");
-    document.body.classList.add("overlay-visible");
-
-    // Lägg till stäng-knappens funktion
-    document.getElementById("close-overlay").addEventListener("click", () => {
-        overlay.classList.remove("visible");
-        document.body.classList.remove("overlay-visible");
-        sun.style.backgroundImage = ""; // Återställ solen
-        if (planetIndicator) {
-            planetIndicator.style.backgroundColor = ''; // Återställ planetindikatorn
-        }
-    });
+  });
 };
-  
-  // Initiera sidan
-  const init = async () => {
-    await fetchApiKey();
-    await fetchPlanets();
-  };
-  
-  init();
+
+// Initiera sidan
+const init = async () => {
+  await fetchApiKey();
+  await fetchPlanets();
+};
+
+init();

@@ -15,37 +15,35 @@
 
     <main>
       <section id="solar-system" aria-label="Solsystemet">
-        <article class="sun" aria-label="Solen">
-          <img src="svg/Subtract.svg" alt="En tredjedel av solen" />
-        </article>
+        <article class="sun" data-planet="Solen" aria-label="Solen"></article>
         <article id="planets" aria-label="Planeter">
-          <div id="solar-system">
+          <section id="solar-system">
             <!-- Merkurius -->
-            <div class="planet mercury" data-planet="Merkurius"></div>
+            <figure class="planet mercury" data-planet="Merkurius"></figure>
 
             <!-- Venus -->
-            <div class="planet venus" data-planet="Venus"></div>
+            <figure class="planet venus" data-planet="Venus"></figure>
 
             <!-- Jorden -->
-            <div class="planet earth" data-planet="Jorden"></div>
+            <figure class="planet earth" data-planet="Jorden"></figure>
 
             <!-- Mars -->
-            <div class="planet mars" data-planet="Mars"></div>
+            <figure class="planet mars" data-planet="Mars"></figure>
 
             <!-- Jupiter -->
-            <div class="planet jupiter" data-planet="Jupiter"></div>
+            <figure class="planet jupiter" data-planet="Jupiter"></figure>
 
             <!-- Saturnus med ring -->
-            <div class="planet saturn" data-planet="Saturnus">
+            <figure class="planet saturn" data-planet="Saturnus">
               <div class="ring"></div>
-            </div>
+            </figure>
 
             <!-- Uranus -->
-            <div class="planet uranus" data-planet="Uranus"></div>
+            <figure class="planet uranus" data-planet="Uranus"></figure>
 
             <!-- Neptunus -->
-            <div class="planet neptune" data-planet="Neptunus"></div>
-          </div>
+            <figure class="planet neptune" data-planet="Neptunus"></figure>
+          </section>
         </article>
       </section>
     </main>
@@ -81,16 +79,16 @@
             <dt>KM från solen:</dt>
         
             <!-- Andra raden -->
-            <dd id="overlay-circumference">160 590 km</dd>
-            <dd id="overlay-distance">2 871 000 000 km</dd>
+            <dd id="overlay-circumference"></dd>
+            <dd id="overlay-distance"></dd>
         
             <!-- Tredje raden -->
             <dt>Max Temperatur:</dt>
             <dt>Min Temperatur:</dt>
         
             <!-- Fjärde raden -->
-            <dd id="overlay-max-temp">-205°C</dd>
-            <dd id="overlay-min-temp">-225°C</dd>
+            <dd id="overlay-max-temp"></dd>
+            <dd id="overlay-min-temp"></dd>
         </dl>
 
         <!-- Andra vita linjen -->
@@ -100,7 +98,7 @@
         <section class="moons-section">
             <dt>Månar:</dt>
             <dd id="overlay-moons">
-                Europa, Ganymedes, Io, Callisto, Amalthea, Himalia
+                
             </dd>
         </section>
     </article>
