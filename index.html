@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solaris - Solsystemet</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" type="module" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -14,38 +14,39 @@
     </header>
 
     <main>
-      <section id="solar-system" aria-label="Solsystemet">
-        <article class="sun" data-planet="Solen" aria-label="Solen"></article>
-        <article id="planets" aria-label="Planeter">
-          <section id="solar-system">
-            <!-- Merkurius -->
-            <figure class="planet mercury" data-planet="Merkurius"></figure>
-
-            <!-- Venus -->
-            <figure class="planet venus" data-planet="Venus"></figure>
-
-            <!-- Jorden -->
-            <figure class="planet earth" data-planet="Jorden"></figure>
-
-            <!-- Mars -->
-            <figure class="planet mars" data-planet="Mars"></figure>
-
-            <!-- Jupiter -->
-            <figure class="planet jupiter" data-planet="Jupiter"></figure>
-
-            <!-- Saturnus med ring -->
-            <figure class="planet saturn" data-planet="Saturnus">
-              <div class="ring"></div>
-            </figure>
-
-            <!-- Uranus -->
-            <figure class="planet uranus" data-planet="Uranus"></figure>
-
-            <!-- Neptunus -->
-            <figure class="planet neptune" data-planet="Neptunus"></figure>
+        <section id="solar-system-container" aria-label="Solsystemet">
+            <!-- Solen -->
+            <article class="sun" data-planet="Solen" aria-label="Solen"></article>
+            
+            <!-- Planeter -->
+            <section id="planet-container" aria-label="Planeter">
+              <!-- Merkurius -->
+              <figure class="planet mercury" data-planet="Merkurius"></figure>
+          
+              <!-- Venus -->
+              <figure class="planet venus" data-planet="Venus"></figure>
+          
+              <!-- Jorden -->
+              <figure class="planet earth" data-planet="Jorden"></figure>
+          
+              <!-- Mars -->
+              <figure class="planet mars" data-planet="Mars"></figure>
+          
+              <!-- Jupiter -->
+              <figure class="planet jupiter" data-planet="Jupiter"></figure>
+          
+              <!-- Saturnus med ring -->
+              <figure class="planet saturn" data-planet="Saturnus">
+                <div class="ring"></div>
+              </figure>
+          
+              <!-- Uranus -->
+              <figure class="planet uranus" data-planet="Uranus"></figure>
+          
+              <!-- Neptunus -->
+              <figure class="planet neptune" data-planet="Neptunus"></figure>
+            </section>
           </section>
-        </article>
-      </section>
     </main>
 
     <section

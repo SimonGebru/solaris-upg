@@ -30,114 +30,136 @@ header .subtitle {
   margin: 0;
   margin-top: 10px;
 }
-#solar-system {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
+/* Container för hela solsystemet */
+#solar-system-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw; /* Anpassa till skärmens bredd */
+    height: 100vh; /* Anpassa till hela höjden */
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  /* Solen */
+  .sun {
+    position: relative;
+    width: 50rem; /* Mindre storlek */
+    height: 50rem; /* Mindre höjd */
+    right: 500px;
+    background-color: rgba(255, 208, 41, 1); /* Gul färg */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 2rem; /* Litet avstånd till Merkurius */
+    z-index: 1; /* Håll den framför bakgrunden */
 }
-.sun {
-  position: absolute;
-  top: 6rem;
-  right: 97rem;
-  width: 27rem;
-  height: 50rem;
-  background-color: rgba(255, 208, 41, 1);
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.planet {
-  border-radius: 50%;
-  position: relative;
-}
-
-/* Individuella planeter */
-.mercury {
-  width: 14px;
-  height: 14px;
-  background: #888888;
-  right: 279px;
-}
-
-.venus {
-  width: 20px;
-  height: 20px;
-  background: #e7cdcd;
-  right: 190px;
-}
-
-.earth {
-  width: 24px;
-  height: 24px;
-  background: #428ed5;
-  right: 110px;
-}
-
-.mars {
-  width: 14px;
-  height: 14px;
-  background: #ef5f5f;
-  right: 17px;
-}
-
-.jupiter {
-  width: 188px;
-  height: 188px;
-  background: #e29468;
-  left: 85px;
-}
-
-.saturn {
-  width: 144px;
-  height: 144px;
-  background: #c7aa72;
-  left: 230px;
-}
-
-.saturn .ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) rotate(-30deg);
-}
-
-.uranus {
-  width: 66px;
-  height: 66px;
-  background: #c9d4f1;
-  left: 410px;
-}
-
-.neptune {
-  width: 66px;
-  height: 66px;
-  background: #7a91a7;
-  left: 485px;
-}
-
-.planet:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.saturn:hover .ring {
-  transform: translate(-50%, -50%) rotate(-30deg) scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.mercury:hover,
-.venus:hover,
-.earth:hover,
-.mars:hover {
-  transform: scale(3);
-  transition: transform 0.3s ease;
-}
+  
+  /* Container för planeter */
+  #planet-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* Jämnt avstånd mellan planeter */
+    align-items: center;
+    position: relative;
+    width: 70%; /* Planeterna ska täcka 70% av bredden */
+    height: auto;
+    right: 177px;
+  }
+  
+  /* Generell planetstil */
+  .planet {
+    border-radius: 50%;
+    position: relative;
+    aspect-ratio: 1; /* Säkerställer att höjd och bredd är lika */
+  width: auto; /* Anpassa bredden dynamiskt */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Individuella planeter */
+  .mercury {
+    width: 14px;
+    height: 14px;
+    background: #888888;
+    right: 240px;
+  }
+  
+  .venus {
+    width: 20px;
+    height: 20px;
+    background: #e7cdcd;
+    right: 215px;
+  }
+  
+  .earth {
+    width: 24px;
+    height: 24px;
+    background: #428ed5;
+    right: 180px;
+  }
+  
+  .mars {
+    width: 14px;
+    height: 14px;
+    background: #ef5f5f;
+    right: 170px;
+  }
+  
+  .jupiter {
+    width: 188px;
+    height: 188px;
+    background: #e29468;
+    right: 123px;
+  }
+  
+  .saturn {
+    width: 144px;
+    height: 144px;
+    background: #c7aa72;
+    right: 90px;
+  }
+  
+  .saturn .ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+  }
+  
+  .uranus {
+    width: 66px;
+    height: 66px;
+    background: #c9d4f1;
+    right: 20px;
+  }
+  
+  .neptune {
+    width: 66px;
+    height: 66px;
+    background: #7a91a7;
+    right: 20px;
+  }
+  
+  /* Hover-effekter */
+  .planet:hover {
+    transform: scale(1.5);
+  }
+  
+  .saturn:hover .ring {
+    transform: translate(-50%, -50%) rotate(-30deg) scale(1.2);
+  }
+  
+  .mercury:hover,
+  .venus:hover,
+  .earth:hover,
+  .mars:hover {
+    transform: scale(2);
+  }
 
 .overlay {
   position: fixed;
@@ -305,4 +327,9 @@ header .subtitle {
 
 .close-btn:hover {
   color: #c6a042;
+}
+
+
+@media (max-width: 1300px) {
+    
 }
