@@ -1,0 +1,142 @@
+@media (max-width: 1300px) {
+    .sun {
+      position: relative;
+      width: 41rem;
+      height: 41rem;
+      right: 220px;
+      background-color: rgba(255, 208, 41, 1);
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 2rem;
+      z-index: 1;
+    }
+    .mercury {
+      width: 14px;
+      height: 14px;
+      background: #888888;
+      right: 27px;
+    }
+    .venus {
+      width: 20px;
+      height: 20px;
+      background: #e7cdcd;
+      right: 43px;
+    }
+    .earth {
+      width: 24px;
+      height: 24px;
+      background: #428ed5;
+      right: 50px;
+    }
+    .mars {
+      width: 14px;
+      height: 14px;
+      background: #ef5f5f;
+      right: 66px;
+    }
+    .jupiter {
+      width: 188px;
+      height: 188px;
+      background: #e29468;
+      right: 75px;
+    }
+    .saturn {
+      width: 144px;
+      height: 144px;
+      background: #c7aa72;
+      right: 83px;
+    }
+    .uranus {
+      width: 66px;
+      height: 66px;
+      background: #c9d4f1;
+      right: 109px;
+    }
+    .neptune {
+      width: 66px;
+      height: 66px;
+      background: #7a91a7;
+      right: 131px;
+    }
+    .planet-indicator {
+      position: absolute;
+      top: 0rem;
+      right: 68rem;
+      width: 50rem;
+      height: 50rem;
+      border-radius: 48%;
+      background-color: #ffffff;
+      z-index: 1;
+    }
+  }
+  @media (min-width: 1400px) {
+    .sun {
+      position: relative;
+      width: 41rem;
+      height: 41rem;
+      right: 290px;
+      background-color: rgba(255, 208, 41, 1);
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 2rem;
+      z-index: 1;
+    }
+    .mercury {
+      width: 14px;
+      height: 14px;
+      background: #888888;
+      right: 87px;
+    }
+    .venus {
+      width: 20px;
+      height: 20px;
+      background: #e7cdcd;
+      right: 83px;
+    }
+    .earth {
+      width: 24px;
+      height: 24px;
+      background: #428ed5;
+      right: 76px;
+    }
+    .mars {
+      width: 14px;
+      height: 14px;
+      background: #ef5f5f;
+      right: 66px;
+    }
+    .jupiter {
+      width: 188px;
+      height: 188px;
+      background: #e29468;
+      right: 75px;
+    }
+    .saturn {
+      width: 144px;
+      height: 144px;
+      background: #c7aa72;
+      right: 83px;
+    }
+    .uranus {
+      width: 66px;
+      height: 66px;
+      background: #c9d4f1;
+      right: 50px;
+    }
+    .neptune {
+      width: 66px;
+      height: 66px;
+      background: #7a91a7;
+      right: 41px;
+    }
+    .planet-indicator {
+      position: absolute;
+      top: 0rem;
+      right: 81rem;
+      width: 50rem;
+      height: 50rem;
+      border-radius: 48%;
+      background-color: #ffffff;
+      z-index: 1;
+    }
+  }
