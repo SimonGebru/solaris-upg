@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solaris - Solsystemet</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="media.css" />
     <script src="./js/main.js" type="module" defer></script>
   </head>
   <body>
@@ -15,95 +15,100 @@
     </header>
 
     <main>
-        <section id="solar-system-container" aria-label="Solsystemet">
-            <!-- Solen -->
-            <article class="sun" data-planet="Solen" aria-label="Solen"></article>
-            
-            <!-- Planeter -->
-            <section id="planet-container" aria-label="Planeter">
-              <!-- Merkurius -->
-              <figure class="planet mercury" data-planet="Merkurius"></figure>
-          
-              <!-- Venus -->
-              <figure class="planet venus" data-planet="Venus"></figure>
-          
-              <!-- Jorden -->
-              <figure class="planet earth" data-planet="Jorden"></figure>
-          
-              <!-- Mars -->
-              <figure class="planet mars" data-planet="Mars"></figure>
-          
-              <!-- Jupiter -->
-              <figure class="planet jupiter" data-planet="Jupiter"></figure>
-          
-              <!-- Saturnus med ring -->
-              <figure class="planet saturn" data-planet="Saturnus">
-                <div class="ring"></div>
-              </figure>
-          
-              <!-- Uranus -->
-              <figure class="planet uranus" data-planet="Uranus"></figure>
-          
-              <!-- Neptunus -->
-              <figure class="planet neptune" data-planet="Neptunus"></figure>
-            </section>
-          </section>
+      <section id="solar-system-container" aria-label="Solsystemet">
+        <!-- Solen -->
+        <article class="sun" data-planet="Solen" aria-label="Solen"></article>
+
+        <!-- Planeter -->
+        <section id="planet-container" aria-label="Planeter">
+          <!-- Merkurius -->
+          <figure class="planet mercury" data-planet="Merkurius"></figure>
+
+          <!-- Venus -->
+          <figure class="planet venus" data-planet="Venus"></figure>
+
+          <!-- Jorden -->
+          <figure class="planet earth" data-planet="Jorden"></figure>
+
+          <!-- Mars -->
+          <figure class="planet mars" data-planet="Mars"></figure>
+
+          <!-- Jupiter -->
+          <figure class="planet jupiter" data-planet="Jupiter"></figure>
+
+          <!-- Saturnus med ring -->
+          <figure class="planet saturn" data-planet="Saturnus">
+            <div class="ring"></div>
+          </figure>
+
+          <!-- Uranus -->
+          <figure class="planet uranus" data-planet="Uranus"></figure>
+
+          <!-- Neptunus -->
+          <figure class="planet neptune" data-planet="Neptunus"></figure>
+        </section>
+      </section>
     </main>
 
     <section
-    id="planet-overlay"
-    class="overlay hidden"
-    role="dialog"
-    aria-labelledby="overlay-title"
->
-<section class="planet-indicator"></section>
-    <article class="overlay-content">
-        <button id="close-overlay" class="close-btn" aria-label="Stäng">✕</button>
+      id="planet-overlay"
+      class="overlay hidden"
+      role="dialog"
+      aria-labelledby="overlay-title"
+    >
+      <section class="planet-indicator"></section>
+      <article class="overlay-content">
+        <button id="close-overlay" class="close-btn" aria-label="Stäng">
+          ✕
+        </button>
 
         <!-- Rubrik och underrubrik -->
         <section class="overlay-header">
-            <h2 id="overlay-title"></h2>
-            <p class="subtitle" id="overlay-latin-name"></p>
+          <h2 id="overlay-title"></h2>
+          <p class="subtitle" id="overlay-latin-name"></p>
         </section>
 
         <!-- Beskrivning -->
-        <p id="overlay-description">
-            
-        </p>
+        <p id="overlay-description"></p>
 
         <!-- Första vita linjen -->
-        <hr class="section-divider">
+        <hr class="section-divider" />
 
         <!-- Data-sektion -->
         <dl class="data-grid">
-            <!-- Första raden -->
-            <dt>Omkrets:</dt>
-            <dt>KM från solen:</dt>
-        
-            <!-- Andra raden -->
-            <dd id="overlay-circumference"></dd>
-            <dd id="overlay-distance"></dd>
-        
-            <!-- Tredje raden -->
-            <dt>Max Temperatur:</dt>
-            <dt>Min Temperatur:</dt>
-        
-            <!-- Fjärde raden -->
-            <dd id="overlay-max-temp"></dd>
-            <dd id="overlay-min-temp"></dd>
+          <!-- Första raden -->
+          <dt>Omkrets:</dt>
+          <dt>KM från solen:</dt>
+
+          <!-- Andra raden -->
+          <dd id="overlay-circumference"></dd>
+          <dd id="overlay-distance"></dd>
+
+          <!-- Tredje raden -->
+          <dt>Max Temperatur:</dt>
+          <dt>Min Temperatur:</dt>
+
+          <!-- Fjärde raden -->
+          <dd id="overlay-max-temp"></dd>
+          <dd id="overlay-min-temp"></dd>
         </dl>
 
         <!-- Andra vita linjen -->
-        <hr class="section-divider">
+        <hr class="section-divider" />
 
         <!-- Månar -->
         <section class="moons-section">
-            <dt>Månar:</dt>
-            <dd id="overlay-moons">
-                
-            </dd>
+          <dt>Månar:</dt>
+          <dd id="overlay-moons"></dd>
         </section>
-    </article>
-</section>
+      </article>
+    </section>
   </body>
 </html>
+
+<!--
+<hr> (Horizontal Rule)
+<dd> (Definition Description)
+<dt> (Definition Term)
+<dl> (Definition List)
+-->
