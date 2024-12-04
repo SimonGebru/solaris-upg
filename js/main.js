@@ -1,5 +1,5 @@
 // Denna modul fungerar som applikationens "kontroller", Initierar applikationen och kopplar ihop alla moduler.
-// Genom att separera initialisering från specifika funktioner håller vi `main.js` enkel och tydlig.
+// Genom att separera initialisering från specifika funktioner håller jag `main.js` enkel och tydlig.
 
 
 import { fetchApiKey, fetchBodies } from "./api.js";
